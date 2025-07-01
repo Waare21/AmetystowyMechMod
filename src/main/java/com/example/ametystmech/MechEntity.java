@@ -1,0 +1,1 @@
+// kod klasy mecha
