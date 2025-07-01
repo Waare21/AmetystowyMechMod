@@ -14,17 +14,8 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew
-    - name: Build mod
-      run: ./gradlew build
 
-    - name: Upload built mod
-      uses: actions/upload-artifact@v4
-      with:
-        name: AmetystowyMechMod
-        path: build/libs/*.jar                         
-     - name: Make gradlew executable
+    - name: Make gradlew executable
       run: chmod +x ./gradlew
 
     - name: Fix gradle wrapper permissions
@@ -32,3 +23,9 @@ jobs:
 
     - name: Build mod
       run: ./gradlew build
+
+    - name: Upload built mod
+      uses: actions/upload-artifact@v4
+      with:
+        name: AmetystowyMechMod
+        path: build/libs/*.jar
