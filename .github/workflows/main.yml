@@ -23,4 +23,12 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: AmetystowyMechMod
-        path: build/libs/*.jar
+        path: build/libs/*.jar                         
+     - name: Make gradlew executable
+      run: chmod +x ./gradlew
+
+    - name: Fix gradle wrapper permissions
+      run: chmod +x gradle/wrapper/gradle-wrapper.jar
+
+    - name: Build mod
+      run: ./gradlew build
